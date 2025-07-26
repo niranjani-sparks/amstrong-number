@@ -1,0 +1,38 @@
+package VSB_pat;
+import java.util.*;
+public class armstrog {
+	public static boolean armstrong(int num) {
+		int onum=num;
+		int sum=0;
+		
+		int n = count(num);
+		while(num!=0) {
+			int digit = num%10;
+			sum+=Math.pow(digit, n);
+			num/=10;
+		}
+		return sum == onum;
+	}
+
+	public static int count(int num) {
+		// TODO Auto-generated method stub
+		int count = 0;
+		while(num!=0) {
+			num/=10;
+			count++;
+		}
+		return count;
+
+	}
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		if(armstrong(num)) {
+			System.out.print("true");
+		}
+		else {
+			System.out.print("false");
+		}
+		}
+
+}
